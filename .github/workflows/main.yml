@@ -1,0 +1,16 @@
+name: Sample scheduled docker action that opens issues
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+permissions:
+  issues: write
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '5 * * * *'
+jobs:
+  container-test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Run test action"
+        uses: bellkev/test-action@main
+        with:
+          repo: ${{ github.repository }}
