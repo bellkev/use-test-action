@@ -4,8 +4,8 @@ permissions:
   issues: write
 on:
   workflow_dispatch:
-  schedule:
-    - cron:  '0 0,12 * * *'
+  # schedule:
+  #   - cron:  '0 0,12 * * *'
 jobs:
   container-test-job:
     runs-on: ubuntu-latest
